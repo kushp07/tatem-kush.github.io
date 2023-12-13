@@ -2,11 +2,12 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import "./App.css";
 
 function App() {
-  // TODO: add keyboard navigation here
+  // Create input refs
   const firstNameRef = useRef<HTMLInputElement>(null);
   const lastNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+
   const [savedData, setSavedData] = useState<any>(null);
 
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
       }
     };
 
+    // Add listener for any keyboard presses
     document.addEventListener("keydown", handleKeyDown);
     loadSavedData();
     return () => {
@@ -35,6 +37,7 @@ function App() {
   const focusNextInput = () => {
     const inputs = [firstNameRef, lastNameRef, emailRef, passwordRef];
 
+    // Find the active input and make next one the active one
     const currentInputIndex = inputs.findIndex(
       (inputRef) => inputRef.current === document.activeElement
     );
@@ -46,6 +49,7 @@ function App() {
   const focusPreviousInput = () => {
     const inputs = [firstNameRef, lastNameRef, emailRef, passwordRef];
 
+    // Find the active input and make previous one the active one
     const currentInputIndex = inputs.findIndex(
       (inputRef) => inputRef.current === document.activeElement
     );
@@ -57,7 +61,7 @@ function App() {
 
   const submitForm = (e: FormEvent) => {
     e.preventDefault();
-    // TODO: implement form data saving to local storage
+    // Implement form data saving to local storage
     const formData = {
       firstName: firstNameRef.current?.value || "",
       lastName: lastNameRef.current?.value || "",
@@ -73,6 +77,7 @@ function App() {
   const loadSavedData = () => {
     const savedDataString = localStorage.getItem("formData");
 
+    // Load saved data from localStorage to its respective refs
     if (savedDataString) {
       const parsedData = JSON.parse(savedDataString);
       setSavedData(parsedData);
