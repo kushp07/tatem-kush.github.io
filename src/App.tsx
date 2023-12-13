@@ -93,26 +93,26 @@ function App() {
           <div className="flex flex-col bg-gray-100 rounded-md p-3 w-72 gap-4 my-5">
             <h1 className="text-center font-bold">Submitted form inputs:</h1>
             <div className="flex justify-between">
-              <span className="text-left font-semibold">{`First Name: `}</span>
-              <h3 className="text-ellipsis overflow-hidden w-2/3">
+              <span className="font-semibold">{`First Name: `}</span>
+              <h3 className="text-ellipsis overflow-hidden w-2/3 text-right">
                 {savedData.firstName}
               </h3>
             </div>
             <div className="flex justify-between">
-              <span className="text-left font-semibold">{`Last Name: `}</span>
-              <h3 className="text-ellipsis overflow-hidden w-2/3">
+              <span className="font-semibold">{`Last Name: `}</span>
+              <h3 className="text-ellipsis overflow-hidden w-2/3 text-right">
                 {savedData.lastName}
               </h3>
             </div>
             <div className="flex justify-between">
-              <span className="text-left font-semibold">{`Email: `}</span>
-              <h3 className="text-ellipsis overflow-hidden w-2/3">
+              <span className="font-semibold">{`Email: `}</span>
+              <h3 className="text-ellipsis overflow-hidden w-2/3 text-right">
                 {savedData.email}
               </h3>
             </div>
             <div className="flex justify-between">
-              <span className="text-left font-semibold">{`Password: `}</span>
-              <h3 className="text-ellipsis overflow-hidden w-2/3">
+              <span className="font-semibold">{`Password: `}</span>
+              <h3 className="text-ellipsis overflow-hidden w-2/3 text-right">
                 {savedData.password}
               </h3>
             </div>
